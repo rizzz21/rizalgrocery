@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Checkout</title>
+  <style>
+    body {
+      background-image: url(checkout.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 140%;  
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    .form-group input[type="text"] {
+      width: 100%;
+      padding: 5px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+    }
+    .button-container {
+      text-align: center;
+    }
+    .buy {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Checkout</h1>
+
+    <form>
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <input type="text" id="address" required>
+      </div>
+
+      <div class="form-group">
+        <label for="postalCode">Postal Code:</label>
+        <input type="text" id="postalCode" required>
+      </div>
+
+      <div class="form-group">
+        <label for="district">District:</label>
+        <input type="text" id="district" required>
+      </div>
+
+      <div class="form-group">
+        <label for="state">State:</label>
+        <input type="text" id="state" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="text" id="phoneNumber" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="text" id="email" required>
+      </div>
+
+      <div class="button-container">
+        <button onclick="placeOrder()" class="buy">Place Order</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    function placeOrder() {
+      var name = document.getElementById("name").value;
+      var address = document.getElementById("address").value;
+      var postalCode = document.getElementById("postalCode").value;
+      var district = document.getElementById("district").value;
+      var state = document.getElementById("state").value;
+      var phoneNumber = document.getElementById("phoneNumber").value;
+      var email = document.getElementById("email").value;
+
+      // Validate form inputs
+      if (name.trim() === '' || address.trim() === '' || postalCode.trim() === '' || district.trim() === '' || state.trim() === '' || phoneNumber.trim() === '' || email.trim() === '') {
+        alert("Please fill in all fields.");
+        return;
+      }
+
+      // Implement order placement logic here
+      alert("Order placed!");
+    }
+  </script>
+</body>
+</html>

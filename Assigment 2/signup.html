@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RIZAL's GROCERY</title>
+  <link rel="stylesheet" href="homepage.css">
+  
+
+
+</head>
+<body>
+
+  <header>
+    <h1>RIZAL's GROCERY</h1>
+    <nav>
+      <div class="menu-items">
+        <button class="menu-item" onclick="location.href='HOMEPAGE.html'">Homepage</button>
+        <button class="menu-item" onclick="location.href='TOILETRIES.html'">Toiletries</button>
+        <button class="menu-item" onclick="location.href='BREAD.html'">Bread</button>
+        <button class="menu-item" onclick="location.href='DRINK.html'">Drink</button>
+        <button class="menu-item" onclick="location.href='FORM.html'">Login</button>
+      </div>
+    </nav>
+  </header>
+  <br><br>
+
+
+  <script>
+    function validateForm() {
+      var name = document.getElementById("name").value;
+      var username = document.getElementById("username").value;
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+      var confirm_password = document.getElementById("confirm_password").value;
+      var gender = document.getElementById("gender").value;
+      var birthday = document.getElementById("birthday").value;
+      
+      if (name === "") {
+        alert("Please enter your full name.");
+        return false;
+      }
+      
+      if (username === "") {
+        alert("Please enter your username.");
+        return false;
+      }
+      
+      if (email === "") {
+        alert("Please enter your email.");
+        return false;
+      }
+
+      // Regular expression to check email format
+      var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email)) {
+      alert("Please enter a valid email address.");
+      return false;
+      }
+      
+      if (password === "") {
+        alert("Please enter your password.");
+        return false;
+      }
+      
+      if (confirm_password === "") {
+        alert("Please confirm your password.");
+        return false;
+      }
+      
+      if (password !== confirm_password) {
+        alert("Passwords do not match.");
+        return false;
+      }
+      
+      if (gender === "") {
+        alert("Please select your gender.");
+        return false;
+      }
+      
+      if (birthday === "") {
+        alert("Please enter your date of birth.");
+        return false;
+      }
+      
+      // Simulating successful registration
+      displaySuccessMessage();
+      return false; // Preventing actual form submission for this example
+    }
+    
+    function displaySuccessMessage() {
+      alert("Registration successful!");
+      location.reload(); // Refresh the page
+    }
+    
+  </script>
+
+
+  <div class="signup-container">
+      <h2>User Registration</h2>
+      <form action="" method="post" onsubmit="return validateForm()">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+        
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        
+        <label for="confirm_password">Confirm Password:</label>
+        <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your password" required>
+        
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+          <option value="">Select</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+        
+        <label for="birthday">Date of Birth:</label>
+        <input type="date" id="birthday" name="birthday" required>
+        <br>
+        <br>
+        <input type="submit" value="Register">
+      </form>
+
+    <div class="login-link">
+      Already have an account? <a href="FORM.html">Log in Now</a>
+      <p class="copyright">&copy; 2023 RIZAL's GROCERY.<br>All rights reserved.</p>
+    </div>
+  </div>
+
+  <!--SIGNUP FORM CSS-->
+  <style>
+    .signup-container {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.signup-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.signup-container label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.signup-container input[type="text"],
+.signup-container input[type="password"],
+.signup-container input[type="email"],
+.signup-container select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.signup-container input[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.signup-container input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.signup-container .login-link {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.signup-container .login-link a {
+  color: #555;
+}
+  </style>
+
+
+  
+
+</body>
+</html>

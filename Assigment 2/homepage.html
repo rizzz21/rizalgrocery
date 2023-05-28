@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RIZAL's GROCERY</title>
+  <link rel="stylesheet" href="homepage.css">
+  
+
+
+</head>
+<body>
+
+  <header>
+    <h1>RIZAL's GROCERY</h1>
+    <nav>
+        <div class="menu-items">
+          <button class="menu-item" onclick="location.href='HOMEPAGE.html'">HOMEPAGE</button>
+          <button class="menu-item" onclick="location.href='TOILETRIES.html'">TOILETRIES</button>
+          <button class="menu-item" onclick="location.href='BREAD.html'">BREAD</button>
+          <button class="menu-item" onclick="location.href='DRINK.html'">DRINK</button>
+          <button class="menu-item" onclick="location.href='FORM.html'">FORM</button>
+        </div>
+    </nav>
+  </header>
+  <br><br>
+  <section>
+    <h2>Your One-Stop Grocery Shop</h2>
+    <p>At RIZAL's GROCERY, we provide you with the finest selection of fresh and high-quality groceries. Our dedicated team works tirelessly to bring you a wide range of products, from locally sourced fruits and vegetables to imported specialty items.</p>
+    <p>Whether you're planning a delicious home-cooked meal or simply stocking up on essentials, we've got you covered. Explore our aisles filled with top-notch ingredients and discover the taste of excellence.</p>
+    <p>Shop with us and experience convenience, quality, and exceptional service. Visit our store today or browse our online catalog to start filling your cart with the finest products for your everyday needs.</p>
+  </section>
+
+
+
+  <div class="slider-container">
+    <img src="toiletris2.jpg" alt="Image 1" class="slider-image">
+    <img src="bread1.jpg" alt="Image 2" class="slider-image">
+    <img src="drink1.jpg" alt="Image 3" class="slider-image">
+    <button class="slider-arrow previous" onclick="previousImage()">&#8249;</button>
+    <button class="slider-arrow next" onclick="nextImage()">&#8250;</button>
+  </div>
+
+
+
+
+  <div class="video-container">
+    <iframe width="900" height="500" src="https://www.youtube.com/embed/siftDMqiq-E" title="Supermarket Cinematic Video Shopping Advertisement Commercial Store Grocery Template Broll" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <br><br><br><br>
+  </div>
+
+  <script>
+    // JavaScript code for image slider
+    var sliderImages = document.querySelectorAll(".slider-image");
+    var currentImageIndex = 0;
+
+    function showImage(index) {
+        // Hide all images
+        for (var i = 0; i < sliderImages.length; i++) {
+            sliderImages[i].style.transform = "translateX(-100%)";
+        }
+
+        // Show the selected image
+        sliderImages[index].style.transform = "translateX(0)";
+    }
+
+    function previousImage() {
+        currentImageIndex--;
+        if (currentImageIndex < 0) {
+            currentImageIndex = sliderImages.length - 1;
+        }
+        showImage(currentImageIndex);
+    }
+
+    function nextImage() {
+        currentImageIndex++;
+        if (currentImageIndex >= sliderImages.length) {
+            currentImageIndex = 0;
+        }
+        showImage(currentImageIndex);
+    }
+
+    setInterval(nextImage, 4000); // Change image every 2 seconds
+</script>
+
+
+
+
+
+
+
+  <footer>
+    <div class="footer-images">
+      <img src="delivery1.png" alt="Image 1" Fast Delivery>
+      <img src="halal-sign.png" alt="Image 2" title="Guaranteed HALAL">
+      <img src="badge.png" alt="Image 3" title="Best Quality">
+    </div>
+      <p>&copy; 2023 RIZAL's GROCERY. All rights reserved.</p>
+  </footer>
+
+
+  
+
+</body>
+</html>
