@@ -1,2 +1,0 @@
-# rizalgrocery
-Rizal's Grocery
